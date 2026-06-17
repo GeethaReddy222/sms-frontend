@@ -1,0 +1,49 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.title {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+}
+
+.navbar {
+
+    height: 60px;
+
+    background-color: #1976d2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 40px;
+}
+
+
+.navbar a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+.navbar a:hover {
+
+    color: #ffd54f;
+}

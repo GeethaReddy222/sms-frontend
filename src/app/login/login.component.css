@@ -1,0 +1,47 @@
+.login-container {
+    height: 100vh;
+    background-color: #f5f7fa;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.login-card {
+    width: 420px;
+    margin-top: -70px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.options a {
+    text-decoration: none;
+    color: #3f51b5;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-text a {
+    color: #3f51b5;
+    text-decoration: none;
+    cursor: pointer;
+}
