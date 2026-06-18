@@ -1,73 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators
-} from '@angular/forms';
-
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
-
-import { passwordMatchValidator } from '.././validators/password-match.validator';
 import { nameValidator } from '../validators/name-validator';
+import { passwordMatchValidator } from '../validators/password-match.validator';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
-
-  registerForm!: FormGroup;
+export class RegisterComponent {
 
   hidePassword = true;
   hideConfirmPassword = true;
 
+  registerForm: FormGroup;
+
   constructor(
     private fb: FormBuilder,
-    private snackBar: MatSnackBar,
-    private router: Router
-  ) { }
-
-  ngOnInit(): void {
-
+    private authService: AuthService,
+    private snackBar: MatSnackBar
+  ) {
     this.registerForm = this.fb.group(
       {
-        fullName: [
-          '',
-          [
-            Validators.required,
-            nameValidator
-          ]
-        ],
-
-        email: [
-          '',
-          [
-            Validators.required,
-            Validators.email
-          ]
-        ],
-
+        fullName: ['', [Validators.required, nameValidator]],
+        email: ['', [Validators.required, Validators.email]],
         password: [
           '',
           [
             Validators.required,
             Validators.pattern(
-              '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$'
+              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/
             )
           ]
         ],
-
-        confirmPassword: [
-          '',
-          Validators.required
-        ],
-
-        role: [
-          '',
-          Validators.required
-        ]
+        confirmPassword: ['', [Validators.required]],
+        role: ['', [Validators.required]]
       },
       {
         validators: passwordMatchValidator
@@ -75,30 +44,44 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-  register() {
-
-    if (this.registerForm.valid) {
-
-      console.log(this.registerForm.value);
-
-      this.snackBar.open(
-        'Registration Successful',
-        '',
-        {
-          duration: 2000,
-          horizontalPosition: 'center',
-          verticalPosition: 'top',
-          panelClass: ['success-snackbar']
-        }
-      );
-
-      this.router.navigate(['/login']);
-
-    }
-
-  }
-
+  // Getter for form controls (you are already using f['field'])
   get f() {
     return this.registerForm.controls;
+  }
+
+  register() {
+
+    if (this.registerForm.invalid) {
+      this.snackBar.open('Please fill all fields correctly', 'Close', {
+        duration: 3000
+      });
+      return;
+    }
+
+    // Prepare data for backend (IMPORTANT: no confirmPassword sent)
+    const formData = {
+      fullName: this.registerForm.value.fullName,
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password,
+      role: this.registerForm.value.role
+    };
+
+    this.authService.register(formData).subscribe({
+      next: (res: any) => {
+        this.snackBar.open(res, 'Close', {
+          duration: 3000
+        });
+
+        this.registerForm.reset();
+      },
+
+      error: (err) => {
+        this.snackBar.open(
+          err.error || 'Registration Failed',
+          'Close',
+          { duration: 3000 }
+        );
+      }
+    });
   }
 }

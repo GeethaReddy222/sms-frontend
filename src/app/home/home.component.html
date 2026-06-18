@@ -1,9 +1,38 @@
-<div class="home-content">
+<div class="home-container">
 
-    <h1>Welcome to Student Management System</h1>
+    <div class="title-container">
+        <h1>Welcome to Student Management System</h1>
 
-    <p>
-        Manage student records efficiently.
-    </p>
+        <p>
+            Manage Students, Teachers and Courses Efficiently and Securely
+        </p>
+        <div class="button-container">
+            <button mat-raised-button matButton="filled" class="register-button" routerLink="/register">Get
+                Started</button>
+            <button mat-raised-button matButton="outlined" class="login-button" routerLink="/login">Login</button>
+        </div>
+    </div>
+
+    <div class="choose-container">
+        <h2>WHY CHOOSE US</h2>
+        <div class="cards-container">
+            <mat-card class="card">
+                <h3>Easy to Use</h3>
+                <p>User-friendly interface that makes management simple</p>
+            </mat-card>
+
+            <mat-card class="card">
+                <h3>Secure & Reliable</h3>
+                <p>Your data is safe with role-based access and secure storage.</p>
+            </mat-card>
+
+            <mat-card class="card">
+                <h3>Fast Performance</h3>
+                <p>Optimized system for better performance and productivity.</p>
+            </mat-card>
+        </div>
+    </div>
+
+
 
 </div>

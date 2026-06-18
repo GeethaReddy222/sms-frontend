@@ -1,20 +1,80 @@
-.home-content {
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.title-container {
+    width: 100%;
     text-align: center;
-
-    margin-top: 100px;
+    background-color: rgb(224, 240, 246);
 }
 
-.home-content h1 {
-
+.title-container h1 {
     font-size: 40px;
-
     color: #1976d2;
+    font-weight: 500;
+    margin-top: 40px;
+
 }
 
-.home-content p {
-
+.title-container p {
     font-size: 20px;
-
     color: gray;
+}
+
+.button-container {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.register-button {
+    background-color: #1976d2;
+    color: white;
+}
+
+.login-button {
+    border-color: #1976d2;
+    border-style: solid;
+    border-width: 0.5px;
+}
+
+.choose-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card p {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    text-align: center;
+}
+
+h2 {
+    font-weight: 600;
+    color: rgb(36, 35, 35);
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-weight: 500;
+    color: rgb(36, 35, 35);
+    text-align: center;
 }

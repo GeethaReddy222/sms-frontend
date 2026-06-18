@@ -10,15 +10,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(240, 244, 245);
+    background-color: rgb(224, 240, 246);
     width: 100%;
-    padding: 40px 20px;
+    padding: 30px 10px;
     text-align: center;
 }
 
 .title {
     color: #1976d2;
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -34,7 +34,7 @@
 }
 
 .features-container {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,7 +48,7 @@ h2 {
 }
 
 h3 {
-    font-weight: 600;
+    font-weight: 500;
     color: rgb(36, 35, 35);
     text-align: center;
 }
@@ -57,8 +57,8 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 10px;
+    padding: 10px;
     width: 100%;
 }
 
@@ -72,7 +72,7 @@ h3 {
 }
 
 .card p {
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
 }
@@ -89,7 +89,7 @@ h3 {
     width: 70%;
     max-width: 900px;
     background-color: rgb(240, 244, 245);
-    padding: 25px;
+
     border-radius: 8px;
 }
 
