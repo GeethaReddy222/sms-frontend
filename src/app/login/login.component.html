@@ -1,37 +1,51 @@
 <div class="login-container">
-
     <mat-card class="login-card">
-
         <mat-card-content>
-
             <h2 class="title">Login</h2>
 
-            <form>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                
                 <mat-form-field appearance="outline" class="full-width">
-                    <mat-label>Username</mat-label>
-                    <input matInput>
-                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" formControlName="email">
+                    <mat-icon matSuffix>email</mat-icon>
+                    
+                    <mat-error *ngIf="f['email'].hasError('required') && f['email'].touched">
+                        Email is required
+                    </mat-error>
+                    <mat-error *ngIf="f['email'].hasError('email') && f['email'].touched">
+                        Please enter a valid email
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="full-width">
                     <mat-label>Password</mat-label>
-                    <input matInput type="password">
-                    <mat-icon class="material-icons-outlined" matSuffix>
-                        visibility
-                    </mat-icon>
+                    <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+                    <button mat-icon-button matSuffix type="button" (click)="togglePasswordVisibility()">
+                        <mat-icon>
+                            {{ hidePassword ? 'visibility_off' : 'visibility' }}
+                        </mat-icon>
+                    </button>
+                    
+                    <mat-error *ngIf="f['password'].hasError('required') && f['password'].touched">
+                        Password is required
+                    </mat-error>
+                    <mat-error *ngIf="f['password'].hasError('minlength') && f['password'].touched">
+                        Password must be at least 6 characters
+                    </mat-error>
                 </mat-form-field>
 
                 <div class="options">
-                    <mat-checkbox>
+                    <mat-checkbox formControlName="rememberMe">
                         Remember Me
                     </mat-checkbox>
 
-                    <a href="#">Forgot Password?</a>
-
+                    <a routerLink="/forgot-password">Forgot Password?</a>
                 </div>
 
-                <button mat-raised-button color="primary" class="full-width">
-                    Login
+                <button mat-raised-button color="primary" class="full-width" [disabled]="loginForm.invalid || isLoading">
+                    <mat-spinner diameter="20" *ngIf="isLoading" style="display: inline-block; margin-right: 10px;"></mat-spinner>
+                    <span>{{ isLoading ? 'Logging in...' : 'Login' }}</span>
                 </button>
 
             </form>
@@ -42,7 +56,5 @@
             </p>
 
         </mat-card-content>
-
     </mat-card>
-
 </div>

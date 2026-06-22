@@ -8,42 +8,76 @@
     font-weight: 700;
     font-style: normal;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    margin-left: 10px;
+.title:hover {
+    color: #ffd54f;
 }
 
 .navbar {
-
     height: 60px;
-
     background-color: #1976d2;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-
 .navbar a {
-
     color: white;
-
     text-decoration: none;
-
-    font-size: 18px;
-
+    font-size: 16px;
     font-weight: 500;
+    margin: 0 5px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-
     color: #ffd54f;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar a .mat-icon {
+    margin-right: 5px;
+}
+
+.user-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 10px;
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 60px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        padding: 6px 10px;
+        margin: 2px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .user-name {
+        font-size: 12px;
+        padding: 3px 10px;
+    }
 }

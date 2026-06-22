@@ -4,29 +4,93 @@
     align-items: center;
     height: 100vh;
     background-color: #f5f7fa;
+    padding: 20px;
 }
 
 .register-card {
     width: 420px;
-
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .title {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
 }
 
 .full-width {
     width: 100%;
+    margin-bottom: 5px;
+}
 
+.password-mismatch-error {
+    margin: -10px 0 10px 0;
+}
+
+.password-mismatch-error mat-error {
+    font-size: 12px;
+}
+
+button[type="submit"] {
+    margin-top: 10px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+button[type="submit"] mat-spinner {
+    display: inline-block;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-link a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
 }
 
 .success-snackbar {
-    background-color: green !important;
+    background-color: #4caf50 !important;
     color: white !important;
 }
 
 .success-snackbar .mat-simple-snackbar,
 .success-snackbar .mat-mdc-snack-bar-label {
     color: white !important;
+}
+
+.error-snackbar {
+    background-color: #f44336 !important;
+    color: white !important;
+}
+
+.error-snackbar .mat-simple-snackbar,
+.error-snackbar .mat-mdc-snack-bar-label {
+    color: white !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .register-card {
+        padding: 15px;
+    }
+    
+    .title {
+        font-size: 24px;
+    }
 }

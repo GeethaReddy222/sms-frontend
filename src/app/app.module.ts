@@ -13,6 +13,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AdminComponent } from './admin/admin.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { StudentComponent } from './student/student.component'
 
 
 
@@ -25,6 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     LoginComponent,
     NavbarComponent,
+    AdminComponent,
+    TeacherComponent,
+    StudentComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
