@@ -16,7 +16,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AdminComponent } from './admin/admin.component';
 import { TeacherComponent } from './teacher/teacher.component';
-import { StudentComponent } from './student/student.component'
+import { StudentComponent } from './student/student.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { StudentsComponent } from './admin/students/students.component';
+import { TeachersComponent } from './admin/teachers/teachers.component';
+import { CoursesComponent } from './admin/courses/courses.component'
 
 
 
@@ -32,6 +36,10 @@ import { StudentComponent } from './student/student.component'
     AdminComponent,
     TeacherComponent,
     StudentComponent,
+    AdminDashboardComponent,
+    StudentsComponent,
+    TeachersComponent,
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,

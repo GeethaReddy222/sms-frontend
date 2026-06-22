@@ -8,6 +8,9 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 @NgModule({
     exports: [
         MatCardModule,
@@ -18,7 +21,9 @@ import { MatSelectModule } from '@angular/material/select';
         MatIconModule,
         MatCheckboxModule,
         MatToolbarModule,
-        MatSelectModule
+        MatSelectModule,
+        MatSidenavModule,
+        MatListModule
 
     ]
 })

@@ -1,0 +1,18 @@
+.sidebar-container {
+
+    height: 100vh;
+
+}
+
+mat-sidenav {
+    width: 250px;
+
+    padding-top: 20px;
+
+}
+
+mat-sidenav-content {
+
+    padding: 20px;
+
+}

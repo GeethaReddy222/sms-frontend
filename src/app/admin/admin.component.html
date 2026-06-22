@@ -1,1 +1,35 @@
-<p>admin works!</p>
+<mat-sidenav-container class="sidebar-container">
+
+    <mat-sidenav mode="side" opened>
+
+        <mat-nav-list>
+
+            <a mat-list-item routerLink="dashboard">
+                Dashboard
+            </a>
+
+            <a mat-list-item routerLink="students">
+                Students
+            </a>
+
+            <a mat-list-item routerLink="teachers">
+                Teachers
+            </a>
+
+            <a mat-list-item routerLink="courses">
+                Courses
+            </a>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <!-- Main content -->
+
+    <mat-sidenav-content>
+
+        <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

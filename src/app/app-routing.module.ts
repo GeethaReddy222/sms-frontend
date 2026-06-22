@@ -8,6 +8,10 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { StudentComponent } from './student/student.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { TeachersComponent } from './admin/teachers/teachers.component';
+import { StudentsComponent } from './admin/students/students.component';
+import { CoursesComponent } from './admin/courses/courses.component';
 
 const routes: Routes = [
 
@@ -32,7 +36,18 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
+      },
+      { path: 'dashboard', component: AdminDashboardComponent },
+      { path: 'teachers', component: TeachersComponent },
+      { path: 'students', component: StudentsComponent },
+      { path: 'courses', component: CoursesComponent }
+    ]
   },
   {
     path: 'teacher',

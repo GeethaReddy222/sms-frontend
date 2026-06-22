@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     // Check initial login status
@@ -44,6 +44,7 @@ export class NavbarComponent implements OnInit {
   goHome() {
     if (this.isLoggedIn) {
       this.logout();
+      this.router.navigate(['/']);
     } else {
       this.router.navigate(['/']);
     }
